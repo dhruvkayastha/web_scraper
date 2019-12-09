@@ -1,0 +1,33 @@
+***programming paradigm***
+Programming paradigms  are a way to classify programming languages based on their features. Languages can be classified into multiple paradigms.
+ Some paradigms are concerned mainly with implications for the execution model of the language, such as allowing side effects, or whether the sequence of operations is defined by the execution model.  Other paradigms are concerned mainly with the way that code is organized, such as grouping a code into units along with the state that is modified by the code.  Yet others are concerned mainly with the style of syntax and grammar.
+ Common programming paradigms include: 
+ imperative in which the programmer instructs the machine how to change its state,
+ procedural which groups instructions into procedures, 
+ object-oriented which groups instructions together with the part of the state they operate on, 
+ declarative in which the programmer merely declares properties of the desired result, but not how to compute it
+ functional in which the desired result is declared as the value of a series of function applications, 
+ logic in which the desired result is declared as the answer to a question about a system of facts and rules, 
+ mathematical in which the desired result is declared as the solution of an optimization problem Symbolic techniques such as reflection, which allow the program to refer to itself, might also be considered as a programming paradigm. However, this is compatible with the major paradigms and thus is not a real paradigm in its own right.
+ For example, languages that fall into the  imperative paradigm  have two main features: they state the order in which operations occur, with constructs that explicitly control that order, and they allow side effects, in which state can be modified at one point in time, within one unit of code, and then later read at a different point in time inside a different unit of code.  The communication between the units of code is not explicit.  Meanwhile, in  object-oriented  programming, code is organized into objects that contain state that is only modified by the code that is part of the object.  Most object-oriented languages are also imperative languages.  In contrast, languages that fit the  declarative paradigm  do not state the order in which to execute operations.  Instead, they supply a number of operations that are available in the system, along with the conditions under which each is allowed to execute.  The implementation of the language's execution model tracks which operations are free to execute and chooses the order on its own. More at  Comparison of multi-paradigm programming languages.
+ 
+
+ **Overview**
+
+ Just as software engineering (as a process) is defined by differing  methodologies , so the programming languages (as models of computation) are defined by differing  paradigms . Some languages are designed to support one paradigm (Smalltalk supports object-oriented programming, Haskell supports functional programming), while other programming languages support multiple paradigms (such as Object Pascal, C++, Java, JavaScript, C#, Scala, Visual Basic, Common Lisp, Scheme, Perl, PHP, Python, Ruby, Wolfram Language, Oz, and F#). For example, programs written in C++, Object Pascal or PHP can be purely procedural, purely object-oriented, or can contain elements of both or other paradigms. Software designers and programmers decide how to use those paradigm elements.
+ In object-oriented programming, programs are treated as a set of interacting objects. In functional programming, programs are treated as a sequence of stateless function evaluations. When programming computers or systems with many processors, in process-oriented programming, programs are treated as sets of concurrent processes that act on a logical shared data structures.
+ Many programming paradigms are as well known for the techniques they  forbid  as for those they  enable . For instance, pure functional programming disallows use of side-effects, while structured programming disallows use of the goto statement. Partly for this reason, new paradigms are often regarded as doctrinaire or overly rigid by those accustomed to earlier styles. Yet, avoiding certain techniques can make it easier to understand program behavior, and to prove theorems about program correctness.
+ Programming paradigms can also be compared with  programming models  which allow invoking an execution model by using only an API. Programming models can also be classified into paradigms, based on features of the execution model.
+ For parallel computing, using a programming model instead of a language is common.  The reason is that details of the parallel hardware leak into the abstractions used to program the hardware.  This causes the programmer to have to map patterns in the algorithm onto patterns in the execution model (which have been inserted due to leakage of hardware into the abstraction).  As a consequence, no one parallel programming language maps well to all computation problems.  It is thus more convenient to use a base sequential language and insert API calls to parallel execution models, via a programming model.  Such parallel programming models can be classified according to abstractions that reflect the hardware, such as shared memory, distributed memory with message passing, notions of  place  visible in the code, and so forth.  These can be considered flavors of programming paradigm that apply to only parallel languages and programming models.
+ 
+
+ **Criticism**
+
+ Some programming language researchers criticise the notion of paradigms as a classification of programming languages, e.g. Harper, and Krishnamurthi.  They argue that many programming languages cannot be strictly classified into one paradigm, but rather include features from several paradigms. See Comparison of multi-paradigm programming languages.
+ 
+
+ **Support for multiple paradigms**
+
+ Most programming languages support more than one programming paradigm to allow programmers to use the most suitable programming style and associated language constructs for a given job. 
+
+ 

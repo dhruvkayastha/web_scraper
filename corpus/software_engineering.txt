@@ -1,0 +1,41 @@
+***software engineering***
+Software engineering  is the systematic application of engineering approaches to the development of software. Notable definitions of software engineering include: 
+ 
+ "the systematic application of scientific and technological knowledge, methods, and experience to the design, implementation, testing, and documentation of software"—The Bureau of Labor Statistics—IEEE  Systems and software engineering - Vocabulary 
+ "The application of a systematic, disciplined, quantifiable approach to the development, operation, and maintenance of software"—IEEE  Standard Glossary of Software Engineering Terminology 
+ "an engineering discipline that is concerned with all aspects of software production"—Ian Sommerville 
+ "the establishment and use of sound engineering principles in order to economically obtain software that is reliable and works efficiently on real machines"—Fritz Bauer 
+ "a branch of computer science that deals with the design, implementation, and maintenance of complex computer programs"—Merriam-Webster The term has also been used less formally:
+ 
+ as the informal contemporary term for the broad range of activities that were formerly called computer programming and systems analysis; 
+ as the broad term for all aspects of the  practice  of computer programming, as opposed to the  theory  of computer programming, which is formally studied as a sub-discipline of computer science; 
+ as the term embodying the  advocacy  of a specific approach to computer programming, one that urges that it be treated as an engineering discipline rather than an art or a craft, and advocates the codification of recommended practices. Software engineering is a direct sub-field of engineering and has an overlap with computer science and management science. It is also considered a part of overall systems engineering.
+ 
+
+ **Fields**
+
+ **Software requirements**
+
+ Requirements engineering is about the elicitation, analysis, specification, and validation of requirements for software.
+ 
+
+ **Software design**
+
+ Software design is about the process of defining the architecture, components, interfaces, and other characteristics of a system or component. This is also called Software architecture.
+ 
+
+ **Software development**
+
+ Software development, the main activity of software construction: is the combination of programming (aka coding), verification, software testing, and debugging. A Software development process: is the definition, implementation, assessment, measurement, management, change, and improvement of the software life cycle process itself. It heavily uses Software configuration management which is about systematically controlling changes to the configuration, and maintaining the integrity and traceability of the configuration and code throughout the system life cycle. Modern processes use software versioning.
+ 
+
+ **Software testing**
+
+ Software testing: is an empirical, technical investigation conducted to provide stakeholders with information about the quality of the product or service under test, with different approaches such as unit testing and integration testing. It is one aspect of software quality. 
+
+ **Software maintenance**
+
+ Software maintenance: refers to the activities required to provide cost-effective support after shipping the software product.
+ 
+
+ 

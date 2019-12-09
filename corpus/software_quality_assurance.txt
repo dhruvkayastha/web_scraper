@@ -1,0 +1,26 @@
+***software quality assurance***
+Software quality assurance  ( SQA ) is a means of monitoring the software engineering processes and methods used to ensure proper quality. This is accomplished by many and varied approaches. It may include ensuring conformance to one or more standards, such as ISO 9000 or a model such as CMMI. It includes standards and procedures that administrators may use to review and audit software products and activities to verify that the software meets standards. According to ISO/IEC 15504 v.2.5 (SPICE), it is a supporting process that provides the independent assurance that all work products, activities and processes comply with the predefined plans and ISO 15504. SQA encompasses the entire software development process, including requirements definition, software design, coding, code reviews, source code control, software configuration management, testing, release management and product integration. It is organized into goals, commitments, abilities, activities, measurements and verification. 
+
+ **Purpose**
+
+ SQA involves a three-prong approach:
+ 
+ Organization-wide policies, procedures and standards 
+ Project-specific policies, procedures and standards 
+ Compliance to appropriate procedures Standards that inform software quality assurance plans:
+ 
+ ISO 9000-3 (original), now ISO 90003ANSI/IEEE External entities can be contracted to verify that projects are standard-compliant.
+ 
+
+ **Activities**
+
+ Quality assurance activities take place at each phase of development.
+ Analysts use application technology to achieve high-quality specifications and designs.
+ Technicians find problems with related software quality through meetings.
+ Tests are created by developers and/or dedicated testers for each significant use case.
+ Standards violations are identified and addressed throughout development.
+ Product/program managers ensure that feature/architecture/component changes are made only after appropriate review.
+ The team monitors statistics about defect discovery, severity and fix rates.
+ 
+
+ 

@@ -1,0 +1,52 @@
+***Software maintenance***
+Software maintenance  in software engineering is the modification of a software product after delivery to correct faults, to improve performance or other attributes. A common perception of maintenance is that it merely involves fixing defects. However, one study indicated that over 80% of maintenance effort is used for non-corrective actions. This perception is perpetuated by users submitting problem reports that in reality are functionality enhancements to the system. More recent studies put the bug-fixing proportion closer to 21%. 
+
+ **Importance of software maintenance**
+
+ The key software maintenance issues are both managerial and technical. Key management issues are: alignment with customer priorities, staffing, which organization does maintenance, estimating costs. Key technical issues are: limited understanding, impact analysis, testing, maintainability measurement.
+ Software maintenance is a very broad activity that includes error correction, enhancements of capabilities, deletion of obsolete capabilities, and optimization. Because change is inevitable, mechanisms must be developed for evaluation, controlling and making modifications.
+ So any work done to change the software after it is in operation is considered to be maintenance work.
+The purpose is to preserve the value of software over the time. The value can be enhanced by expanding the customer base, meeting additional requirements, becoming easier to  use, more efficient and employing newer technology. Maintenance may span for 20 years, whereas development may be 1–2 years. 
+
+ **Software maintenance planning**
+
+ An integral part of software is the maintenance one, which requires an accurate maintenance plan to be prepared during the software development. It should specify how users will request modifications or report problems. The budget should include resource and cost estimates. A new decision should be addressed for the developing of every new system feature and its quality objectives. The software maintenance, which can last for 5–6 years (or even decades) after the development process, calls for an effective plan which can address the scope of software maintenance, the tailoring of the post delivery/deployment process, the designation of who will provide maintenance, and an estimate of the life-cycle costs. The selection of proper enforcement of standards is the challenging task right from early stage of software engineering which has not got definite importance by the concerned stakeholders.
+ 
+
+ **Software maintenance processes**
+
+ This section describes the six software maintenance processes as:
+ 
+ The implementation process contains software preparation and transition activities, such as the conception and creation of the maintenance plan; the preparation for handling problems identified during development; and the follow-up on product configuration management. 
+ The problem and modification analysis process, which is executed once the application has become the responsibility of the maintenance group. The maintenance programmer must analyze each request, confirm it (by reproducing the situation) and check its validity, investigate it and propose a solution, document the request and the solution proposal, and finally, obtain all the required authorizations to apply the modifications. 
+ The process considering the implementation of the modification itself. 
+ The process acceptance of the modification, by confirming the modified work with the individual who submitted the request in order to make sure the modification provided a solution. 
+ The migration process (platform migration, for example) is exceptional, and is not part of daily maintenance tasks. If the software must be ported to another platform without any change in functionality, this process will be used and a maintenance project team is likely to be assigned to this task. 
+ Finally, the last maintenance process, also an event which does not occur on a daily basis, is the retirement of a piece of software. There are a number of processes, activities and practices that are unique to maintainers, for example:
+ 
+ Transition: a controlled and coordinated sequence of activities during which a system is transferred progressively from the developer to the maintainer; 
+ Service Level Agreements (SLAs) and specialized (domain-specific) maintenance contracts negotiated by maintainers; 
+ Modification Request and Problem Report Help Desk: a problem-handling process used by maintainers to prioritize, documents and route the requests they receive; 
+
+ **Categories of maintenance in ISO/IEC 14764**
+
+ E.B. Swanson initially identified three categories of maintenance: corrective, adaptive, and perfective. The  IEEE 1219  standard was superseded in June 2010 by  P14764 .
+These have since been updated and ISO/IEC 14764 presents:
+ 
+ Corrective maintenance: Reactive modification of a software product performed after delivery to correct discovered problems. 
+ Adaptive maintenance: Modification of a software product performed after delivery to keep a software product usable in a changed or changing environment. 
+ Perfective maintenance: Modification of a software product after delivery to improve performance or maintainability. 
+ Preventive maintenance: Modification of a software product after delivery to detect and correct latent faults in the software product before they become effective faults. There is also a notion of pre-delivery/pre-release maintenance which is all the good things you do to lower the total cost of ownership of the software.  Things like compliance with coding standards that includes software maintainability goals. The management of coupling and cohesion of the software.  The attainment of software supportability goals (SAE JA1004, JA1005 and JA1006 for example).  Note also that some academic institutions are carrying out research to quantify the cost to ongoing software maintenance due to the lack of resources such as design documents and system/software comprehension training and resources (multiply costs by approx. 1.5-2.0 where there is no design data available).
+ 
+
+ **Maintenance Factors**
+
+ Impact of key adjustment factors on maintenance (sorted in order of maximum positive impact)
+ 
+ Not only are error-prone modules troublesome, but many other factors can degrade performance too. For example, very complex spaghetti code is quite difficult to maintain safely.
+A very common situation which often degrades performance is lack of suitable maintenance tools, such as defect tracking software, change management software, and test library software. Below describe some of the factors and the range of impact on software maintenance.
+ Impact of key adjustment factors on maintenance (sorted in order of maximum negative impact)
+ 
+ 
+
+ 
