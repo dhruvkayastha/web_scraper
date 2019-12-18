@@ -75,6 +75,15 @@ Computer programming  is the process of designing and building an executable com
  **Programmers**
 
  Computer programmers are those who write computer software. Their jobs usually involve:
+ Coding
+ Debugging
+ Documentation
+ Integration
+ Maintenance
+ Requirements analysis
+ Software architecture
+ Software testing
+ Specification
  
 
  
