@@ -1,18 +1,28 @@
 from html.parser import HTMLParser
 import wikipediaapi
 import sys
-
+import numpy as np
 
 class Parser(HTMLParser):
     def __init__(self):
         HTMLParser.__init__(self)
         self.inHead = False
         self.skipData = False
-        self.skipHeaderList = {'history', 'references', 'further reading', 'external links', 'see also', 'controversy', 'notes', 'technique', 'profession', 'education', 'etymology', 'discoveries', 'philosophy', 'academia'} # insert h2 headers to avoid here
+        # self.skipHeaderList = {'history', 'references', 'further reading', 'external links', 'see also', 'controversy', 'notes', 'technique', 'profession', 'education'} # insert h2 headers to avoid here
         self.skipDataLevel = 100 # level > this will be skipped
         self.currDataLevel = 0
         self.levels = [1]
 
+        # with open("skip_header_list.txt",'r') as f:
+        # 	l = f.readlines()
+        # 	l = [x.split('\n')[0] for x in l]
+        # 	self.skipHeaderList = set(l)
+
+        with open('skip_header_list.txt', 'r') as f:
+    	    self.skipHeaderList = set([line.strip() for line in f])
+
+        with open('accept_header_list.txt', 'r') as f:
+            self.acceptHeaderList = set([line.strip() for line in f])
 
     def handle_starttag(self, tag, attrs):
         if tag == 'h2':
@@ -50,15 +60,30 @@ class Parser(HTMLParser):
 
     def handle_data(self, data):
         if self.inHead:
+            # for item in self.skipHeaderList:
+            #     print(item)
             if data.lower() in self.skipHeaderList:
                 self.skipDataLevel = self.levels[-1]
                 return
-            else:
+            elif data.lower() in self.acceptHeaderList:
                 if self.skipDataLevel > self.levels[-1]:
                     print("**"+data+"**")
                 return
+            else:
+                if self.skipDataLevel > self.levels[-1]:
+                    print("Accept Header? [Y/n]: " + data.lower(), file=sys.stderr)
+                    x = input()
+                    if x.lower() == 'n':
+                        self.skipDataLevel = self.levels[-1]
+                        self.skipHeaderList.update({data.lower()})
+                        return
+                    else:
+                        if self.skipDataLevel > self.levels[-1]:
+                            print("**"+data+"**")
+                        self.acceptHeaderList.update({data.lower()})
+                        return
+                return
 
-        # print("---levels--", self.levels, self.skipDataLevel)
 
         if len(self.levels) == 0 or self.skipDataLevel <= self.levels[-1]:
             # if len(self.levels) != 0:
@@ -68,18 +93,22 @@ class Parser(HTMLParser):
 
         return
 
-
+    def save_dicts(self):
+    	with open('skip_header_list.txt', 'w') as f:
+    		for item in self.skipHeaderList:
+        		f.write("%s\n" % item)
+    	with open('accept_header_list.txt', 'w') as f:
+    		for item in self.acceptHeaderList:
+        		f.write("%s\n" % item)
 
 wiki_html = wikipediaapi.Wikipedia(language='en', extract_format=wikipediaapi.ExtractFormat.HTML)
 
 
-# pages = ['software_engineering', 'software_testing', 'software_design', 'software_development', 'Software_maintenance', 'software_requirements']
-pages = ['computer_science', 'computer_programming', 'programming_paradigm', 'software_quality_assurance', 'object-oriented_programming', 'Systems_development_life_cycle']
-
+pages = ['Operating_system','Software_quality']
 
 for page_title in pages:
 
-    sys.stdout = open('corpus/' + page_title + '.txt', 'w')
+    sys.stdout = open('raw_corpus/'+page_title + '.txt', 'w')
 
     page = wiki_html.page(page_title) # insert title here
     print('***'+page_title.replace('_', ' ')+'***')
@@ -87,3 +116,6 @@ for page_title in pages:
     # with open('page.html') as f:
     #     data = f.read()
     parser.feed(page.text)
+    # with open("temp.html",'w') as f:
+    #     f.write(page.text)
+    parser.save_dicts()
