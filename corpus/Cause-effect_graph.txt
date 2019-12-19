@@ -1,0 +1,13 @@
+***Cause-effect graph***
+In software testing, a  cause–effect graph  is a directed graph that maps a set of causes to a set of effects.  The causes may be thought of as the input to the program, and the effects may be thought of as the output.  Usually the graph shows the nodes representing the causes on the left side and the nodes representing the effects on the right side.  There may be intermediate nodes in between that combine inputs using logical operators such as AND and OR.
+ Constraints may be added to the causes and effects.  These are represented as edges labeled with the constraint symbol using a dashed line.  For causes, valid constraint symbols are E (exclusive), O (one and only one), I (at least one), and R (Requires). The exclusive constraint states that at most one of the causes 1 and 2 can be true, i.e. both cannot be true simultaneously. The Inclusive (at least one) constraint states that at least one of the causes 1, 2 or 3 must be true, i.e. all cannot be false simultaneously. The one and only one (OaOO or simply O) constraint states that only one of the causes 1, 2 or 3 can be true. The Requires constraint states that if cause 1 is true, then cause 2 must be true, and it is impossible for 1 to be true and 2 to be false.
+ For effects, valid constraint symbol is M (Mask). The mask constraint states that if effect 1 is true then effect 2 is false. Note that the mask constraint relates to the effects and not the causes like the other constraints. 
+ The graph's direction is as follows:
+ 
+ Causes --> intermediate nodes --> Effects
+ 
+ The graph can always be rearranged so there is only one node between any input and any output.  See conjunctive normal form and disjunctive normal form.
+ A cause–effect graph is useful for generating a reduced decision table.
+ 
+
+ 

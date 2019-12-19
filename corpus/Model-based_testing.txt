@@ -1,0 +1,64 @@
+***Model-based testing***
+Model-based testing  is an application of model-based design for designing and optionally also executing artifacts to perform software testing or system testing. Models can be used to represent the desired behavior of a system under test (SUT), or to represent testing strategies and a test environment. The picture on the right depicts the former approach.
+ A model describing a SUT is usually an abstract, partial presentation of the SUT's desired behavior.
+Test cases derived from such a model are functional tests on the same level of abstraction as the model.
+These test cases are collectively known as an abstract test suite.
+An abstract test suite cannot be directly executed against an SUT because the suite is on the wrong level of abstraction.
+An executable test suite needs to be derived from a corresponding abstract test suite.
+The executable test suite can communicate directly with the system under test.
+This is achieved by mapping the abstract test cases to 
+concrete test cases suitable for execution. In some model-based testing environments, models contain enough information to generate executable test suites directly.
+In others, elements in the abstract test suite must be mapped to specific statements or method calls in the software to create a concrete test suite. This is called solving the "mapping problem".
+In the case of online testing (see below), abstract test suites exist only conceptually but not as explicit artifacts.
+ Tests can be derived from models in different ways. Because testing is usually experimental and based on heuristics,
+there is no known single best approach for test derivation.
+It is common to consolidate all test derivation related parameters into a
+package that is often known as "test requirements", "test purpose" or even "use case(s)".
+This package can contain information about those parts of a model that should be focused on, or the conditions for finishing testing (test stopping criteria).
+ Because test suites are derived from models and not from source code, model-based testing is usually seen as one form of black-box testing.
+ Model-based testing for complex software systems is still an evolving field.
+ 
+
+ **Models**
+
+ Especially in Model Driven Engineering or in  Object Management Group's (OMG's) model-driven architecture, models are built before or parallel with the corresponding systems. Models can also be constructed from completed systems. Typical modeling languages for test generation include UML, SysML, mainstream programming languages, finite machine notations, and mathematical formalisms such as Z, B (Event-B), Alloy or Coq.
+ 
+
+ **Deploying model-based testing**
+
+ There are various known ways to deploy model-based testing, which include  online testing ,  offline generation of executable tests , and  offline generation of manually deployable tests . Online testing means that a model-based testing tool connects directly to an SUT and tests it dynamically.
+ Offline generation of executable tests means that a model-based testing tool generates test cases as computer-readable assets that can be later run automatically; for example, a collection of Python classes that embodies the generated testing logic.
+ Offline generation of manually deployable tests means that a model-based testing tool generates test cases as human-readable assets that can later assist in manual testing; for instance, a PDF document in a human language describing the generated test steps.
+ 
+
+ **Deriving tests algorithmically**
+
+ The effectiveness of model-based testing is primarily due to the potential for automation it offers. If a model is machine-readable and formal to the extent that it has a well-defined behavioral interpretation, test cases can in principle be derived mechanically.
+ 
+
+ **From finite state machines**
+
+ Often the model is translated to or interpreted as a finite state automaton or a state transition system. This automaton represents the possible configurations of the system under test. To find test cases, the automaton is searched for executable paths. A possible execution path can serve as a test case. This method works if the model is deterministic or can be transformed into a deterministic one. Valuable off-nominal test cases may be obtained by leveraging unspecified transitions in these models.
+ Depending on the complexity of the system under test and the corresponding model the number of paths can be very large, because of the huge amount of possible configurations of the system. To find test cases that can cover an appropriate, but finite, number of paths, test criteria are needed to guide the selection. This technique was first proposed by Offutt and Abdurazik in the paper that started model-based testing. Multiple techniques for test case generation have been developed and are surveyed by Rushby. Test criteria are described in terms of general graphs in the testing textbook. 
+
+ **Theorem proving**
+
+ Theorem proving was originally used for automated proving of logical formulas. For model-based testing approaches, the system is modeled by a set of predicates, specifying the system's behavior. To derive test cases, the model is partitioned into equivalence classes over the valid interpretation of the set of the predicates describing the system under test. Each class describes a certain system behavior, and, therefore, can serve as a test case. The simplest partitioning is with the disjunctive normal form approach wherein the logical expressions describing the system's behavior are transformed into the disjunctive normal form.
+ 
+
+ **Constraint logic programming and symbolic execution**
+
+ Constraint programming can be used to select test cases satisfying specific constraints by solving a set of constraints over a set of variables. The system is described by the means of constraints.  Solving the set of constraints can be done by Boolean solvers (e.g. SAT-solvers based on the Boolean satisfiability problem) or by numerical analysis, like the Gaussian elimination. A solution found by solving the set of constraints formulas can serve as a test cases for the corresponding system.
+ Constraint programming can be combined with symbolic execution. In this approach a system model is executed symbolically, i.e. collecting data constraints over different control paths, and then using the constraint programming method for solving the constraints and producing test cases. 
+
+ **Model checking**
+
+ Model checkers can also be used for test case generation. Originally model checking was developed as a technique to check if a property of a specification is valid in a model. When used for testing, a model of the system under test, and a property to test is provided to the model checker. Within the procedure of proofing, if this property is valid in the model, the model checker detects witnesses and counterexamples. A witness is a path where the property is satisfied, whereas a counterexample is a path in the execution of the model where the property is violated. These paths can again be used as test cases.
+ 
+
+ **Test case generation by using a Markov chain test model**
+
+ Markov chains are an efficient way to handle Model-based Testing. Test models realized with Markov chains can be understood as a usage model: it is referred to as Usage/Statistical Model Based Testing. Usage models, so Markov chains, are mainly constructed of 2 artifacts : the Finite State Machine (FSM) which represents all possible usage scenario of the tested system and the Operational Profiles (OP) which qualify the FSM to represent how the system is or will be used statistically. The first (FSM) helps to know what can be or has been tested and the second (OP) helps to derive operational test cases.
+Usage/Statistical Model-based Testing starts from the facts that is not possible to exhaustively test a system and that failure can appear with a very low rate. This approach offers a pragmatic way to statically derive test cases which are focused on improving the reliability of the system under test. Usage/Statistical Model Based Testing was recently extended to be applicable to embedded software systems. 
+
+ 

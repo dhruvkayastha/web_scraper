@@ -1,0 +1,56 @@
+***Fuzz testing***
+Fuzzing  or  fuzz testing  is an automated software testing technique that involves providing invalid, unexpected, or random data as inputs to a computer program. The program is then monitored for exceptions such as crashes, failing built-in code assertions, or potential memory leaks. Typically, fuzzers are used to test programs that take structured inputs. This structure is specified, e.g., in a file format or protocol and distinguishes valid from invalid input. An effective fuzzer generates semi-valid inputs that are "valid enough" in that they are not directly rejected by the parser, but do create unexpected behaviors deeper in the program and are "invalid enough" to expose corner cases that have not been properly dealt with.
+ For the purpose of security, input that crosses a trust boundary is often the most interesting. For example, it is more important to fuzz code that handles the upload of a file by any user than it is to fuzz the code that parses a configuration file that is accessible only to a privileged user.
+ 
+
+ **Types of fuzzers**
+
+ A fuzzer can be categorized as follows: 
+ A fuzzer can be generation-based or mutation-based depending on whether inputs are generated from scratch or by modifying existing inputs, 
+ A fuzzer can be dumb or smart depending on whether it is aware of input structure, and 
+ A fuzzer can be white-, grey-, or black-box, depending on whether it is aware of program structure. 
+
+ **Reuse of existing input seeds**
+
+ A mutation-based fuzzer leverages an existing corpus of seed inputs during fuzzing. It generates inputs by modifying (or rather mutating) the provided seeds. For example, when fuzzing the image library libpng, the user would provide a set of valid PNG image files as seeds while a mutation-based fuzzer would modify these seeds to produce semi-valid variants of each seed. The corpus of seed files may contain thousands of potentially similar inputs. Automated seed selection (or test suite reduction) allows users to pick the best seeds in order to maximize the total number of bugs found during a fuzz campaign. A generation-based fuzzer generates inputs from scratch. For instance, a smart generation-based fuzzer takes the input model that was provided by the user to generate new inputs. Unlike mutation-based fuzzers, a generation-based fuzzer does not depend on the existence or quality of a corpus of seed inputs.
+ Some fuzzers have the capability to do both, to generate inputs from scratch and to generate inputs by mutation of existing seeds. 
+
+ **Aware of input structure**
+
+ Typically, fuzzers are used to generate inputs for programs that take structured inputs, such as a file, a sequence of keyboard or mouse events, or a sequence of messages. This structure distinguishes valid input that is accepted and processed by the program from invalid input that is quickly rejected by the program. What constitutes a valid input may be explicitly specified in an input model. Examples of input models are formal grammars, file formats, GUI-models, and network protocols. Even items not normally considered as input can be fuzzed, such as the contents of databases, shared memory, environment variables or the precise interleaving of threads. An effective fuzzer generates semi-valid inputs that are "valid enough" so that they are not directly rejected from the parser and "invalid enough" so that they might stress corner cases and exercise interesting program behaviours.
+ A smart (model-based, grammar-based, or protocol-based) fuzzer leverages the input model to generate a greater proportion of valid inputs. For instance, if the input can be modelled as an abstract syntax tree, then a smart mutation-based fuzzer would employ random transformations to move complete subtrees from one node to another. If the input can be modelled by a formal grammar, a smart generation-based fuzzer would instantiate the production rules to generate inputs that are valid with respect to the grammar. However, generally the input model must be explicitly provided, which is difficult to do when the model is proprietary, unknown, or very complex. If a large corpus of valid and invalid inputs is available, a grammar induction technique, such as Angluin's L* algorithm, would be able to generate an input model. A dumb fuzzer does not require the input model and can thus be employed to fuzz a wider variety of programs. For instance, AFL is a dumb mutation-based fuzzer that modifies a seed file by flipping random bits, by substituting random bytes with "interesting" values, and by moving or deleting blocks of data. However, a dumb fuzzer might generate a lower proportion of valid inputs and stress the parser code rather than the main components of a program. The disadvantage of dumb fuzzers can be illustrated by means of the construction of a valid checksum for a cyclic redundancy check (CRC). A CRC is an error-detecting code that ensures that the integrity of the data contained in the input file is preserved during transmission. A checksum is computed over the input data and recorded in the file. When the program processes the received file and the recorded checksum does not match the re-computed checksum, then the file is rejected as invalid. Now, a fuzzer that is unaware of the CRC is unlikely to generate the correct checksum. However, there are attempts to identify and re-compute a potential checksum in the mutated input, once a dumb mutation-based fuzzer has modified the protected data. 
+
+ **Aware of program structure**
+
+ Typically, a fuzzer is considered more effective if it achieves a higher degree of code coverage. The rationale is, if a fuzzer does not exercise certain structural elements in the program, then it is also not able to reveal bugs that are hiding in these elements. Some program elements are considered more critical than others. For instance, a division operator might cause a division by zero error, or a system call may crash the program.
+ A black-box fuzzer treats the program as a black box and is unaware of internal program structure. For instance, a random testing tool that generates inputs at random is considered a blackbox fuzzer. Hence, a blackbox fuzzer can execute several hundred inputs per second, can be easily parallelized, and can scale to programs of arbitrary size. However, blackbox fuzzers may only scratch the surface and expose "shallow" bugs. Hence, there are attempts to develop blackbox fuzzers that can incrementally learn about the internal structure (and behavior) of a program during fuzzing by observing the program's output given an input. For instance, LearnLib employs active learning to generate an automaton that represents the behavior of a web application.
+ A white-box fuzzer leverages program analysis to systematically increase code coverage or to reach certain critical program locations. For instance, SAGE leverages symbolic execution to systematically explore different paths in the program.
+If the program's specification is available, a whitebox fuzzer might leverage techniques from model-based testing to generate inputs and check the program outputs against the program specification.
+A whitebox fuzzer can be very effective at exposing bugs that hide deep in the program. However, the time used for analysis (of the program or its specification) can become prohibitive. If the whitebox fuzzer takes relatively too long to generate an input, a blackbox fuzzer will be more efficient. Hence, there are attempts to combine the efficiency of blackbox fuzzers and the effectiveness of whitebox fuzzers. A gray-box fuzzer leverages instrumentation rather than program analysis to glean information about the program. For instance, AFL and libFuzzer utilize lightweight instrumentation to trace basic block transitions exercised by an input. This leads to a reasonable performance overhead but informs the fuzzer about the increase in code coverage during fuzzing, which makes gray-box fuzzers extremely efficient vulnerability detection tools. 
+
+ **Uses**
+
+ Fuzzing is used mostly as an automated technique to expose vulnerabilities in security-critical programs that might be exploited with malicious intent. More generally, fuzzing is used to demonstrate the presence of bugs rather than their absence. Running a fuzzing campaign for several weeks without finding a bug does not prove the program correct. After all, the program may still fail for an input that has not been executed, yet; executing a program for all inputs is prohibitively expensive. If the objective is to prove a program correct for all inputs, a formal specification must exist and techniques from formal methods must be used.
+ 
+
+ **Exposing bugs**
+
+ In order to expose bugs, a fuzzer must be able to distinguish expected (normal) from unexpected (buggy) program behavior. However, a machine cannot always distinguish a bug from a feature. In automated software testing, this is also called the test oracle problem. Typically, a fuzzer distinguishes between crashing and non-crashing inputs in the absence of specifications and to use a simple and objective measure. Crashes can be easily identified and might indicate potential vulnerabilities (e.g., denial of service or arbitrary code execution). However, the absence of a crash does not indicate the absence of a vulnerability. For instance, a program written in C may or may not crash when an input causes a buffer overflow. Rather the program's behavior is undefined.
+ To make a fuzzer more sensitive to failures other than crashes, sanitizers can be used to inject assertions that crash the program when a failure is detected. There are different sanitizers for different kinds of bugs:
+ 
+ to detect memory related errors, such as buffer overflows and use-after-free (using memory debuggers such as AddressSanitizer), 
+ to detect race conditions and deadlocks (ThreadSanitizer), 
+ to detect undefined behavior (UndefinedBehaviorSanitizer), 
+ to detect memory leaks (LeakSanitizer), or 
+ to check control-flow integrity (CFISanitizer). Fuzzing can also be used to detect "differential" bugs if a reference implementation is available. For automated regression testing, the generated inputs are executed on two versions of the same program. For automated differential testing, the generated inputs are executed on two implementations of the same program (e.g., lighttpd and httpd are both implementations of a web server). If the two variants produce different output for the same input, then one may be buggy and should be examined more closely.
+ 
+
+ **Validating static analysis reports**
+
+ Static program analysis analyzes a program without actually executing it. This might lead to false positives where the tool reports problems with the program that do not actually exist. Fuzzing in combination with dynamic program analysis can be used to try to generate an input that actually witnesses the reported problem. 
+
+ **Browser security**
+
+ Modern web browsers undergo extensive fuzzing. The Chromium code of Google Chrome is continuously fuzzed by the Chrome Security Team with 15,000 cores. For Microsoft Edge and Internet Explorer, Microsoft performed fuzzed testing with 670 machine-years during product development, generating more than 400 billion DOM manipulations from 1 billion HTML files. 
+
+ 

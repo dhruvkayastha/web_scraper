@@ -1,0 +1,60 @@
+***Session-based testing***
+Session-based testing  is a software test method that aims to combine accountability and exploratory testing to provide rapid defect discovery, creative on-the-fly test design, management control and metrics reporting. The method can also be used in conjunction with scenario testing. Session-based testing was developed in 2000 by Jonathan and James Bach.
+ Session-based testing can be used to introduce measurement and control to an immature test process and can form a foundation for significant improvements in productivity and error detection. Session-based testing can offer benefits when formal requirements are not present, incomplete, or changing rapidly.
+ 
+
+ **Elements of session-based testing**
+
+ **Mission**
+
+ The mission in Session Based Test Management identifies the purpose of the session, helping to focus the session while still allowing for exploration of the system under test. According to Jon Bach, one of the co-founders of the methodology, the mission tells us "what we are testing or what problems we are looking for." 
+
+ **Charter**
+
+ A charter is a goal or agenda for a test session. Charters are created by the test team prior to the start of testing, but they may be added or changed at any time. Often charters are created from a specification, test plan, or by examining results from previous sessions.
+ 
+
+ **Session**
+
+ An uninterrupted period of time spent testing, ideally lasting one to two hours. Each session is focused on a charter, but testers can also explore new opportunities or issues during this time. The tester creates and executes tests based on ideas, heuristics or whatever frameworks to guide them and records their progress. This might be through the use of written notes, video capture tools or by whatever method as deemed appropriate by the tester.
+ 
+
+ **Session report**
+
+ The session report records the test session. Usually this includes:
+ 
+ Charter. 
+ Area tested. 
+ Detailed notes on how testing was conducted. 
+ A list of any bugs found. 
+ A list of issues (open questions, product or project concerns) 
+ Any files the tester used or created to support their testing 
+ Percentage of the session spent on the charter vs investigating new opportunities. 
+ Percentage of the session spent on:
+ Testing - creating and executing tests. 
+ Bug investigation / reporting. 
+ Session setup or other non-testing activities. 
+ Session Start time and duration. 
+
+ **Debrief**
+
+ A debrief is a short discussion between the manager and tester (or testers) about the session report.
+Jonathan Bach uses the acronym PROOF to help structure his debriefing. PROOF stands for:-
+ 
+ Past. What happened during the session? 
+ Results. What was achieved during the session? 
+ Obstacles. What got in the way of good testing? 
+ Outlook. What still needs to be done? 
+ Feelings. How does the tester feel about all this? 
+
+ **Parsing results**
+
+ With a standardized Session Report, software tools can be used to parse and store the results as aggregate data for reporting and metrics. This allows reporting on the number of sessions per area or a breakdown of time spent on testing, bug investigation, and setup / other activities.
+ 
+
+ **Planning**
+
+ Testers using session-based testing can adjust their testing daily to fit the needs of the project. Charters can be added or dropped over time as tests are executed and/or requirements change.
+ 
+
+ 

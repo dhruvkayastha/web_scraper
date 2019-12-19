@@ -1,0 +1,18 @@
+***Scenario testing***
+Scenario testing  is a software testing activity that uses scenarios: hypothetical stories to help the tester work through a complex problem or test system. The ideal scenario test is a credible, complex, compelling or motivating story; the outcome of which is easy to evaluate. These tests are usually different from test cases in that test cases are single steps whereas scenarios cover a number of steps. 
+
+ **Methods**
+
+ **System scenarios**
+
+ In this method only those sets of realistic, user activities that cover several components in the system are used as scenario tests. Development of system scenario can be done using: 
+ Story lines 
+ State transitions 
+ Business verticals 
+ Implementation story from customers 
+
+ **Use-case and role-based scenarios**
+
+ In this method the focus is on how a user uses the system with different roles and environment. 
+
+ 
