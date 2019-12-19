@@ -1,0 +1,57 @@
+***Mutation testing***
+Mutation testing  (or  mutation analysis  or  program mutation ) is used to design new software tests and evaluate the quality of existing software tests.  Mutation testing involves modifying a program in small ways. Each mutated version is called a  mutant  and tests detect and reject mutants by causing the behavior of the original version to differ from the mutant. This is called  killing  the mutant. Test suites are measured by the percentage of mutants that they kill. New tests can be designed to kill additional mutants. Mutants are based on well-defined  mutation operators  that either mimic typical programming errors (such as using the wrong operator or variable name) or force the creation of valuable tests (such as dividing each expression by zero). The purpose is to help the tester develop effective tests or locate weaknesses in the test data used for the program or in sections of the code that are seldom or never accessed during execution. Mutation testing is a form of white-box testing.
+ 
+
+ **Introduction**
+
+ Most of this article is about "program mutation", in which the program is modified. A more general definition of  mutation analysis  is using well-defined rules defined on syntactic structures to make systematic changes to software artifacts. Mutation analysis has been applied to other problems, but is usually applied to testing. So  mutation testing  is defined as using mutation analysis to design new software tests or to evaluate existing software tests. Thus, mutation analysis and testing can be applied to design models, specifications, databases, tests, XML, and other types of software artifacts, although program mutation is the most common.
+ 
+
+ **Overview**
+
+ Tests can be created to verify the correctness of the implementation of a given software system, but the creation of tests still poses the question whether the tests are correct and sufficiently cover the requirements that have originated the implementation. (This technological problem is itself an instance of a deeper philosophical problem named "Quis custodiet ipsos custodes?" ["Who will guard the guards?"].) The idea is that if a mutant is introduced without being detected by the test suite, this indicates either that the code that had been mutated was never executed (dead code) or that the test suite was unable to locate the faults represented by the mutant.
+ For this to function at any scale, a large number of mutants are usually introduced, leading to the compilation and execution of an extremely large number of copies of the program. This problem of the expense of mutation testing had reduced its practical use as a method of software testing. However, the increased use of object oriented programming languages and unit testing frameworks has led to the creation of mutation testing tools that test individual portions of an application.
+ 
+
+ **Goals**
+
+ The goals of mutation testing are multiple:
+ 
+ identify weakly tested pieces of code (those for which mutants are not killed) 
+ identify weak tests (those that never kill mutants) 
+ compute the mutation score 
+ learn about error propagation and state infection in the program 
+
+ **Mutation testing overview**
+
+ Mutation testing is based on two hypotheses. The first is the  competent programmer  hypothesis. This hypothesis states that most software faults introduced by experienced programmers are due to small syntactic errors. The second hypothesis is called the  coupling effect . The coupling effect asserts that simple faults can cascade or  couple  to form other emergent faults. Subtle and important faults are also revealed by higher-order mutants, which further support the coupling effect. Higher-order mutants are enabled by creating mutants with more than one mutation.
+ Mutation testing is done by selecting a set of mutation operators and then applying them to the source program one at a time for each applicable piece of the source code. The result of applying one mutation operator to the program is called a  mutant . If the test suite is able to detect the change (i.e. one of the tests fails), then the mutant is said to be  killed .
+ For example, consider the following C++ code fragment:
+ 
+
+ The condition mutation operator would replace  &&  with  ||  and produce the following mutant:
+ 
+
+ Now, for the test to kill this mutant, the following three conditions should be met:
+ 
+ A test must  reach  the mutated statement. 
+ Test input data should  infect  the program state by causing different program states for the mutant and the original program. For example, a test with  a = 1  and  b = 0  would do this. 
+ The incorrect program state (the value of 'c') must  propagate  to the program's output and be checked by the test. These conditions are collectively called the  RIP model . Weak mutation testing  (or  weak mutation coverage ) requires that only the first and second conditions are satisfied.  Strong mutation testing  requires that all three conditions are satisfied. Strong mutation is more powerful, since it ensures that the test suite can really catch the problems. Weak mutation is closely related to code coverage methods. It requires much less computing power to ensure that the test suite satisfies weak mutation testing than strong mutation testing.
+ However, there are cases where it is not possible to find a test case that could kill this mutant. The resulting program is behaviorally equivalent to the original one. Such mutants are called  equivalent mutants .
+ Equivalent mutants detection is one of biggest obstacles for practical usage of mutation testing. The effort needed to check if mutants are equivalent or not can be very high even for small programs. A systematic literature review of a wide range of approaches to overcome the Equivalent Mutant Problem (presented by ) identified 17 relevant techniques (in 22 articles) and three categories of techniques: detecting (DEM); suggesting (SEM); and avoiding equivalent mutant generation (AEMG). The experiment indicated that Higher Order Mutation in general and JudyDiffOp strategy in particular provide a promising approach to the Equivalent Mutant Problem.
+ 
+
+ **Mutation operators**
+
+ Many mutation operators have been explored by researchers. Here are some examples of mutation operators for imperative languages:
+ 
+ Statement deletion 
+ Statement duplication or insertion, e.g.  goto fail; 
+ Replacement of boolean subexpressions with  true  and  false 
+ Replacement of some arithmetic operations with others, e.g.  +  with  * ,  -  with  / 
+ Replacement of some boolean relations with others, e.g.  >  with  >= ,  ==  and  <= 
+ Replacement of variables with others from the same scope (variable types must be compatible) mutation score = number of mutants killed / total number of mutants 
+ These mutation operators are also called traditional mutation operators.
+There are also mutation operators for object-oriented languages, for concurrent constructions, complex objects like containers, etc. Operators for containers are called  class-level  mutation operators. For example, the muJava tool offers various class-level mutation operators such as Access Modifier Change, Type Cast Operator Insertion, and Type Cast Operator Deletion. Mutation operators have also been developed to perform security vulnerability testing of programs  
+
+ 

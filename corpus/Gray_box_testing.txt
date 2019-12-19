@@ -1,0 +1,50 @@
+***Gray box testing***
+
+ Gray-box testing  (International English spelling:  grey-box testing ) is a combination of white-box testing and black-box testing. The aim of this testing is to search for the defects if any due to improper structure or improper usage of applications. 
+
+ **Overview**
+
+ A black-box tester is unaware of the internal structure of the application to be tested, while a white-box tester has access to the internal structure of the application. A gray-box tester partially knows the internal structure, which includes access to the documentation of internal data structures as well as the algorithms used. Gray-box testers require both high-level and detailed documents describing the application, which they collect in order to define test cases. 
+
+ **Need for gray-box testing**
+
+ Gray-box testing is beneficial because it takes the straightforward technique of black-box testing and combines it with the code-targeted systems in white-box testing.
+ Gray-box testing is based on requirement test case generation because it presents all the conditions before the program is tested by using the assertion method. A requirement specification language is used to make it easy to understand the requirements and verify its correctness. 
+
+ **Gray-box testing assumptions for object-oriented software**
+
+ Object-oriented software consists primarily of objects; where objects are single indivisible units having executable code and/or data. Some assumptions are stated below which are needed for the application of use gray-box testing.
+ 
+ Activation of Methods 
+ State Reporting in Class Under Test (CUT). 
+ Report Testing is inherent in Class Under Test. 
+
+ **Techniques**
+
+ Cem Kaner defines "gray-box testing as involving inputs and outputs, but test design is educated by information about the code or the program operation of a kind that would normally be out of view of the tester". Gray-box testing techniques are:
+ 
+ Matrix Testing: states the status report of the project. 
+ Regression testing: it implies rerunning of the test cases if new changes are made. 
+ Pattern Testing: verify the good application for its design or architecture and patterns. 
+ Orthogonal array testing: used as subset of all possible combination.  
+
+ **Effects**
+
+ **Positive Effects**
+
+ Offers combined benefits: As Gray-box testing is combination of white-box and black-box testing, it  serves advantages from both the testings. 
+ Non Intrusive: It is based on functional specification, architectural view whereas not on source code or binaries which makes it invasive too. 
+ Intelligent Test Authoring: Gray-box tester handles intelligent test scenario, for example, data type handling, communication protocol, exception handling. 
+ Unbiased Testing: In spite of all above advantages and functionalities, Gray-box testing maintains boundary for testing between tester and developer. 
+
+ **Negative Effects**
+
+ Partial code coverage: In gray-box testing, source code or binaries are missing because of limited access to internal or structure of the applications which results in limited access for code path traversal. 
+ Defect Identification: In distributed applications, it is difficult to associate defect identification. Still, Gray-box testing is a boon to find how appropriate these systems throw exceptions and how fine are these exceptions handled in distributed systems having web services environment. 
+
+ **Applications**
+
+ Gray-box testing is well suited for web applications. Web applications have distributed network or systems; due to absence of source code or binaries it is not possible to use white-box testing. Black-box testing is also not used due to just contract between customer and developer, so it is more efficient to use gray-box testing as significant information is available in Web Services Description Language (WSDL). 
+ Gray-box testing is suited for functional or business domain testing. Functional testing is done basically a test of user interactions with may be external systems.  Gray-box testing is well-suited for functional testing due to its characteristics; it also helps to confirm that software meets the requirements defined for the software. 
+
+ 

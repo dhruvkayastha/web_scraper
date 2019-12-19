@@ -1,0 +1,19 @@
+***Modified Condition/Decision Coverage***
+In software testing, the  modified condition/decision coverage  ( MC/DC ) is a code coverage criterion that requires all of the below during testing: 
+ Each entry and exit point is invoked 
+ Each decision takes every possible outcome 
+ Each condition in a decision takes every possible outcome 
+ Each condition in a decision is shown to independently affect the outcome of the decision. Independence of a condition is shown by proving that only one condition changes at a time.
+ MC/DC is used in avionics software development guidance DO-178B and DO-178C to ensure adequate testing of the most critical (Level A) software, which is defined as that software which could  provide (or prevent failure of)  continued safe flight and landing of an aircraft. It is also highly recommended for SIL 4 in part 3 Annex B of the basic safety publication and ASIL D in part 6 of automotive standard ISO 26262. 
+
+ **Definitions**
+
+ Condition 
+ A condition is a leaf-level Boolean expression (it cannot be broken down into simpler Boolean expressions). Decision 
+ A Boolean expression composed of conditions and zero or more Boolean operators.  A decision without a Boolean operator is a condition. Condition coverage 
+ Every condition in a decision in the program has taken all possible outcomes at least once. Decision coverage 
+ Every point of entry and exit in the program has been invoked at least once, and every decision in the program has taken all possible outcomes at least once. Condition/decision coverage 
+ Every point of entry and exit in the program has been invoked at least once, every condition in a decision in the program has taken all possible outcomes at least once, and every decision in the program has taken all possible outcomes at least once. Modified condition/decision coverage 
+ Every point of entry and exit in the program has been invoked at least once, every condition in a decision in the program has taken all possible outcomes at least once, and each condition has been shown to affect that decision outcome independently. A condition is shown to affect a decision's outcome independently by varying just that condition while holding fixed all other possible conditions. The condition/decision criterion does not guarantee the coverage of all conditions in the module because in many test cases, some conditions of a decision are masked by the other conditions. Using the modified condition/decision criterion, each condition must be shown to be able to act on the decision outcome by itself, everything else being held fixed. The MC/DC criterion is thus much stronger than the condition/decision coverage. 
+
+ 

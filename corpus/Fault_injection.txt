@@ -1,0 +1,58 @@
+***Fault injection***
+Fault injection  is a testing technique which aids in understanding how [virtual/real] system behaves when stressed in unusual ways. This technique is based on simulation's or experiment's result, thus it may be more valid (or closer to reality) compared to statistical methods.
+ In software testing, fault injection is a technique for improving the coverage of a test by introducing faults to test code paths, in particular error handling code paths, that might otherwise rarely be followed. It is often used with stress testing and is widely considered to be an important part of developing robust software.  Robustness testing (also known as Syntax Testing, Fuzzing or Fuzz testing) is a type of fault injection commonly used to test for vulnerabilities in communication interfaces such as protocols, command line parameters, or APIs.
+ The propagation of a fault through to an observable failure follows a well defined cycle. When executed, a fault may cause an error, which is an invalid state within a system boundary. An error may cause further errors within the system boundary, therefore each new error acts as a fault, or it may propagate to the system boundary and be observable. When error states are observed at the system boundary they are termed failures. This mechanism is termed the fault-error-failure cycle  and is a key mechanism in dependability.
+ 
+
+ **Model implemented fault injection**
+
+ By increasing complexity of Cyber-Physical Systems, applying traditional fault injection's methods are not efficient anymore, so tester trying to use fault injection in the model level.
+ 
+
+ **Software implemented fault injection**
+
+ SWIFI techniques for software fault injection can be categorized into two types: compile-time injection and runtime injection.
+ Compile-time injection  is an injection technique where source code is modified to inject simulated faults into a system. One method is called mutation testing which changes existing lines of code so that they contain faults. A simple example of this technique could be changing  a = a + 1  to  a = a – 1 
+ Code mutation produces faults which are very similar to those unintentionally added by programmers.
+ A refinement of code mutation is  Code Insertion Fault Injection  which adds code, rather than modifying existing code. This is usually done through the use of perturbation functions which are simple functions which take an existing value and perturb it via some logic into another value, for example
+ 
+
+ In this case pFunc is the perturbation function and it is applied to the return value of the function that has been called introducing a fault into the system.
+ Runtime Injection  techniques use a software trigger to inject a fault into a running software system. Faults can be injected via a number of physical methods and triggers can be implemented in a number of ways, such as: Time Based triggers (When the timer reaches a specified time an interrupt is generated and the interrupt handler associated with the timer can inject the fault. ); Interrupt Based Triggers (Hardware exceptions and software trap mechanisms are used to generate an interrupt at a specific place in the system code or on a particular event within the system, for instance access to a specific memory location).
+ Runtime injection techniques can use a number of different techniques to insert faults into a system via a trigger.
+ 
+ Corruption of memory space: This technique consists of corrupting RAM, processor registers, and I/O map. 
+ Syscall interposition techniques: This is concerned with the fault propagation from operating system kernel interfaces to executing systems software. This is done by intercepting operating system calls made by user-level software and injecting faults into them. 
+ Network Level fault injection: This technique is concerned with the corruption, loss or reordering of network packets at the network interface. These techniques are often based around the debugging facilities provided by computer processor architectures.
+ 
+
+ **Protocol software fault injection**
+
+ Complex software systems, especially multi-vendor distributed systems based on open standards, perform input/output operations to exchange data via stateful, structured exchanges known as "protocols." One kind of fault injection that is particularly useful to test protocol implementations (a type of software code that has the unusual characteristic in that it cannot predict or control its input) is fuzzing. Fuzzing is an especially useful form of Black-box testing since the various invalid inputs that are submitted to the software system do not depend on, and are not created based on knowledge of, the details of the code running inside the system.
+ 
+
+ **Hardware implemented fault injection**
+
+ This technique was applied on hardware's prototype. Testers inject fault by changing voltage of some parts in circuit, increasing or decreasing temperature, bombard the board by high energy radiation and etc.
+ 
+
+ **Fault injection tools**
+
+ Although these types of faults can be injected by hand the possibility of introducing an unintended fault is high, so tools exist to parse a program automatically and insert faults.
+ 
+
+ **Fault injection in functional properties or test cases**
+
+ In contrast to traditional mutation testing where mutant faults are generated and injected into the code description of the model, application of a series of newly defined mutation operators directly to the model properties rather than to the model code has also been investigated. Mutant properties that are generated from the initial properties (or test cases) and validated by the model checker should be considered as new properties that have been missed during the initial verification procedure. Therefore, adding these newly identified properties to the existing list of properties improves the coverage metric of the formal verification and consequently lead to a more reliable design.
+ 
+
+ **Application of fault injection**
+
+ Fault injection can take many forms. In the testing of operating systems for example, fault injection is often performed by a  driver  (kernel-mode software) that intercepts  system calls  (calls into the kernel) and randomly returning a failure for some of the calls.  This type of fault injection is useful for testing low level user mode software.  For higher level software, various methods  inject faults.  In managed code, it is common to use instrumentation. Although fault injection can be undertaken by hand, a number of fault injection tools exist to automate the process of fault injection. Depending on the complexity of the API for the level where faults are injected, fault injection tests often must be carefully designed to minimize the number of false positives.  Even a well designed fault injection test can sometimes produce situations that are impossible in the normal operation of the software.  For example, imagine there are two API functions,  Commit  and  PrepareForCommit , such that alone, each of these functions can possibly fail, but if  PrepareForCommit  is called and succeeds, a subsequent call to  Commit  is guaranteed to succeed.  Now consider the following code:
+ 
+
+ Often, it will be infeasible for the fault injection implementation to keep track of enough state to make the guarantee that the API functions make.  In this example, a fault injection test of the above code might hit the assert, whereas this would never happen in normal operation.
+ Fault-injection can be used at testing time, during the execution of test cases. For example, the short-circuit testing algorithm injects exceptions during test suite execution so as to simulate unanticipated errors. This algorithm collects data for verifying two resilience properties.
+ 
+
+ 
