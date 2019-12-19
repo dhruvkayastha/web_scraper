@@ -1,0 +1,34 @@
+***Black-box testing***
+Black-box testing  is a method of software testing that examines the functionality of an application without peering into its internal structures or workings. This method of test can be applied virtually to every level of software testing: unit, integration, system and acceptance. It is sometimes referred to as specification-based testing. 
+
+ **Test procedures**
+
+ Specific knowledge of the application's code, internal structure and programming knowledge in general is not required. The tester is aware of  what  the software is supposed to do but is not aware of  how  it does it. For instance, the tester is aware that a particular input returns a certain, invariable output but is not aware of  how  the software produces the output in the first place. 
+
+ **Test cases**
+
+ Test cases are built around specifications and requirements, i.e., what the application is supposed to do. Test cases are generally derived from external descriptions of the software, including specifications, requirements and design parameters. Although the tests used are primarily  functional  in nature,  non-functional  tests may also be used. The test designer selects both valid and invalid inputs and determines the correct output, often with the help of a test oracle or a previous result that is known to be good, without any knowledge of the test object's internal structure.
+ 
+
+ **Test design techniques**
+
+ Typical black-box test design techniques include: 
+ Decision table testing 
+ All-pairs testing 
+ Equivalence partitioning 
+ Boundary value analysis 
+ Cause–effect graph 
+ Error guessing 
+ State transition testing 
+ Use case testing 
+ User story testing 
+ Domain analysis 
+ Syntax testing 
+ Combining technique 
+
+ **Hacking**
+
+ In penetration testing, black-box testing refers to a method where an ethical hacker has no knowledge of the system being attacked. The goal of a black-box penetration test is to simulate an external hacking or cyber warfare attack.
+ 
+
+ 
