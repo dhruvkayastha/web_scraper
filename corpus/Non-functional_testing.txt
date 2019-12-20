@@ -1,0 +1,18 @@
+***Non-functional testing***
+Non-functional testing  is the testing of a software application or system for its non-functional requirements: the way a system operates, rather than specific behaviours of that system. This is in contrast to functional testing, which tests against functional requirements that describe the functions of a system and its components. The names of many non-functional tests are often used interchangeably because of the overlap in scope between various non-functional requirements. For example, software performance is a broad term that includes many specific requirements like reliability and scalability.
+ Non-functional testing includes:
+ 
+ Baseline testing 
+ Compliance testing 
+ Documentation testing 
+ Endurance testing 
+ Load testing 
+ Localization testing and Internationalization testing 
+ Performance testing 
+ Recovery testing 
+ Resilience testing 
+ Security testing 
+ Scalability testing 
+ Stress testing 
+ Usability testing 
+ Volume testing 

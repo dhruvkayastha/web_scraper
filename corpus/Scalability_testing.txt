@@ -1,0 +1,44 @@
+***Scalability testing***
+Scalability testing , is the testing of a software application to measure its capability to scale up or scale out in terms of any of its non-functional capability.
+ Performance, scalability and reliability testing are usually grouped together by software quality analysts.
+ The main goals of scalability testing are to determine the user limit for the web application and ensure end user experience, under a high load, is not compromised. One example is if a web page can be accessed in a timely fashion with a limited delay in response. Another goal is to check if the server can cope i.e. Will the server crash if it is under a heavy load?  Dependent on the application that is being tested, different parameters are tested. If a webpage is being tested, the highest possible number of simultaneous users would be tested. Also dependent on the application being tested is the attributes that are tested - these can include CPU usage, network usage or user experience.
+ Successful testing will project most of the issues which could be related to the network, database or hardware/software. 
+
+ **Creating a scalability test**
+
+ When creating a new application, it is difficult to accurately predict the number of users in 1, 2 or even 5 years. Although an estimate can be made, it is not a definite number. An issue with an increasing number of users is that it can create new areas of failure. For example, if you have 100,000 new visitors, it's not just access to the application that could be a problem; you might also experience issues with the database where you need to store all the data of these new customers. 
+
+ **Increment loads**
+
+ This is why when creating a scalability test, it is important to scale up in increments. These steps can be split into small, medium and high loads. We must scale up in increments as each stage tests a different aspect. Small loads ensure the system functions as it should on a basic level. Medium loads test the system can function at its expected level. High loads test the system can cope with a high load. 
+
+ **Test environment**
+
+ The environment should be constant throughout testing in order to provide accurate and reliable results. If the testing is a success, we should see a proportional change in performance. For example, if we double the users on the system, we should see a drop in performance of 50%. Alternatively, if measuring system statistics such as memory or CPU usage over time, this may have a different graph that is not proportional as users are not being plotted on either axis.
+ 
+
+ **Outcomes of scalability testing**
+
+ Once we have collected the data from our various stages, we can begin to plot the results on various graphs to show the results. However, the graphs can vary depending on what is being plotted.
+ 
+
+ **Unproportional outcome**
+
+ In Figure 1, we can see a graph showing a resources usage (in this case,memory) over time. The graph is not proportionate but can still be considered a passed test as initially there is a ramp up phase as the system begins to run, however, as more users are added, there is little change in memory usage. This means that the current memory capacity can cope with all 3 stages of the test.
+ 
+
+ **Proportional outcome**
+
+ In figure 2, we can see a more proportional increase, comparing the number of users to the time taken to execute a report. With a low load of 20 users, the average time is 5.5 seconds, as we increase the load to medium (40 users) and a high load (60 users), the average time increases to 9.5 and 18 seconds respectively. In some cases, there may be changes that have to be made to the server software or hardware. Once the necessary upgrades have been made, we must re-run the tests to ensure the upgrades have been effective in addressing the issues previously raised. When we have a proportional outcome, there are no bottlenecks as we scale up and increase the load the system is placed under.  
+
+ **Vertical and horizontal scaling**
+
+ As a result of scalability testing, upgrades can be required to software and hardware. These upgrades can be split into vertical or horizontal scaling.
+ Vertical scaling, also known as scaling up, is the process of replacing a component with a device that is generally more powerful or improved. For example, replacing a processor with a faster one. Horizontal scaling, also known as scaling out is setting up another server for example to run in parallel with the original so they share the workload. 
+
+ **Advantages and disadvantages**
+
+ There are advantages and disadvantages to both methods of scaling. Although scaling up may be simpler, the addition of hardware resources can result in diminishing returns. This means that every time we upgrade the processor for example, we do not always get the same level of benefits as the previous change.
+ However, horizontal scaling can be extremely expensive, not only the cost of entire systems such as servers, but we must also take into account their regular maintenance costs . 
+
+ 

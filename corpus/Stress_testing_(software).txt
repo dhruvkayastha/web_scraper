@@ -1,0 +1,48 @@
+***Stress testing (software)***
+Stress testing  is a software testing activity that determines the robustness of software by testing beyond the limits of normal operation. Stress testing is particularly important for "mission critical" software, but is used for all types of software. Stress tests commonly put a greater emphasis on robustness, availability, and error handling under a heavy load, than on what would be considered correct behavior under normal circumstances.
+ 
+
+ **Field experience**
+
+ Failures may be related to:
+ 
+ characteristics of non-production like environments, e.g. small test databases 
+ complete lack of load or stress testing 
+
+ **Rationale**
+
+ Reasons for stress testing include:
+ 
+ The software being tested is "mission critical", that is, failure of the software (such as a crash) would have disastrous consequences. 
+ The amount of time and resources dedicated to testing is usually not sufficient, with traditional testing methods, to test all of the situations in which the software will be used when it is released. 
+ Even with sufficient time and resources for writing tests, it may not be possible to determine before hand all of the different ways in which the software will be used.  This is particularly true for operating systems and middleware, which will eventually be used by software that doesn't even exist at the time of the testing. 
+ Customers may use the software on computers that have significantly fewer computational resources (such as memory or disk space) than the computers used for testing. 
+ Input data integrity cannot be guaranteed. Input data are software wide: it can be data files, streams and memory buffers, as well as arguments and options given to a command line executable or user inputs triggering actions in a GUI application. Fuzzing and monkey test methods can be used to find problems due to data corruption or incoherence. 
+ Concurrency is particularly difficult to test with traditional testing methods.  Stress testing may be necessary to find race conditions and deadlocks. 
+ Software such as web servers that will be accessible over the Internet may be subject to denial of service attacks. 
+ Under normal conditions, certain types of bugs, such as memory leaks, can be fairly benign and difficult to detect over the short periods of time in which testing is performed.  However, these bugs can still be potentially serious.  In a sense, stress testing for a relatively short period of time can be seen as simulating normal operation for a longer period of time. 
+
+ **Relationship to branch coverage**
+
+ Branch coverage  (a specific type of code coverage) is a metric of the number of branches executed under test, where "100% branch coverage" means that every branch in a program has been executed at least once under some test.  Branch coverage is one of the most important metrics for software testing; software for which the branch coverage is low is not generally considered to be thoroughly tested.  Note that code coverage metrics are a property of the tests for a piece of software, not of the software being tested.
+ Achieving high branch coverage often involves writing  negative  test variations, that is, variations where the software is supposed to fail in some way, in addition to the usual  positive  test variations, which test intended usage.  An example of a negative variation would be calling a function with illegal parameters.  There is a limit to the branch coverage that can be achieved even with negative variations, however, as some branches may only be used for handling of errors that are beyond the control of the test.  For example, a test would normally have no control over memory allocation, so branches that handle an "out of memory" error are difficult to test.
+ Stress testing can achieve higher branch coverage by producing the conditions under which certain error handling branches are followed.  The coverage can be further improved by using fault injection.
+ 
+
+ **Load test vs. stress test**
+
+ Stress testing tries to break the system under test by overwhelming its resources or by taking resources away from it (in which case it is sometimes called negative testing). The main purpose of this process is to make sure that the system fails and recovers gracefully—a quality known as recoverability.
+ Load testing implies a controlled environment moving from low loads to high. Stress testing focuses on more random events, chaos and unpredictability. Using a web application as an example here are ways stress might be introduced: 
+ double the baseline number for concurrent users/HTTP connections 
+ randomly shut down and restart ports on the network switches/routers that connect the servers (via SNMP commands for example) 
+ take the database offline, then restart it 
+ rebuild a RAID array while the system is running 
+ run processes that consume resources (CPU, memory, disk, network) on the Web and database servers 
+ observe how the system reacts to failure and recovers
+ Does it save its state? 
+ Does the application hang and freeze or does it fail gracefully? 
+ On restart, is it able to recover from the last good state? 
+ Does the system output meaningful error messages to the user and to the logs? 
+ Is the security of the system compromised because of unexpected failures? 
+
+ 

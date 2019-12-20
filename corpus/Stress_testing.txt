@@ -1,0 +1,24 @@
+***Stress testing***
+Stress testing  (sometimes called  torture testing ) is a form of deliberately intense or thorough testing used to determine the stability of a given system or entity. It involves testing beyond normal operational capacity, often to a breaking point, in order to observe the results. Reasons can include:
+ 
+ to determine breaking points or safe usage limits 
+ to confirm mathematical model is accurate enough in predicting breaking points or safe usage limits 
+ to confirm intended specifications are being met 
+ to determine modes of failure (how exactly a system fails) 
+ to test stable operation of a part or system outside standard usage Reliability engineers often test items under expected stress or even under accelerated stress in order to determine the operating life of the item or to determine modes of failure. The term "stress" may have a more specific meaning in certain industries, such as material sciences, and therefore stress testing may sometimes have a technical meaning – one example is in fatigue testing for materials.
+ 
+
+ **Computing**
+
+ **Software**
+
+ In software testing, a system stress test refers to tests that put a greater emphasis on robustness, availability, and error handling under a heavy load, rather than on what would be considered correct behavior under normal circumstances. In particular, the goals of such tests may be to ensure the software does not crash in conditions of insufficient computational resources (such as memory or disk space), unusually high concurrency, or denial of service attacks.
+ Examples:
+ 
+ A web server may be stress tested using scripts, bots, and various denial of service tools to observe the performance of a web site during peak loads. These attacks generally are under an hour long, or until a limit in the amount of data that the web server can tolerate is found. Stress testing may be contrasted with load testing:
+ 
+ Load testing examines the entire environment and database, while measuring the response time, whereas stress testing focuses on identified transactions, pushing to a level so as to break transactions or systems. 
+ During stress testing, if transactions are selectively stressed, the database may not experience much load, but the transactions are heavily stressed. On the other hand, during load testing the database experiences a heavy load, while some transactions may not be stressed. 
+ System stress testing, also known as stress testing, is loading the concurrent users over and beyond the level that the system can handle, so it breaks at the weakest link within the entire system. 
+
+ 

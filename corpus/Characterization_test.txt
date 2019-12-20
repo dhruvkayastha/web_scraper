@@ -1,0 +1,31 @@
+***Characterization test***
+In computer programming, a  characterization test  (also known as  Golden Master Testing ) is a means to describe (characterize) the  actual  behavior of an existing piece of software, and therefore protect existing behavior of legacy code against unintended changes via automated testing.  This term was coined by Michael Feathers. 
+
+ **Overview**
+
+ The goal of characterization tests is to help developers verify that the modifications made to a reference version of a software system did not modify its behavior in unwanted or undesirable ways. They enable, and provide a safety net for, extending and refactoring code that does not have adequate unit tests.
+ In James Bachs and Michael Boltons classification of test oracles, this kind of testing corresponds to the historical oracle. In contrast to the usual approach of assertions-based software testing, the outcome of the test is not determined by individual values or properties (that are checked with assertions), but by comparing a complex result of the tested software-process as a whole with the result of the same process in a previous version of the software. In a sense, characterization testing inverts traditional testing: Traditional tests check individual properties (whitelists them), where characterization testing checks all properties that are not removed (blacklisted).
+ When creating a characterization test, one must observe what outputs occur for a given set of inputs. Given an observation that the legacy code gives a certain output based on given inputs, then a test can be written that asserts that the output of the legacy code matches the observed result for the given inputs.  For example, if one observes that f(3.14) == 42, then this could be created as a characterization test.  Then, after modifications to the system, the test can determine if the modifications caused changes in the results when given the same inputs.
+ Unfortunately, as with any testing, it is generally not possible to create a characterization test for every possible input and output.  As such, many people opt for either statement or branch coverage.  However, even this can be difficult.  Test writers must use their judgment to decide how much testing is appropriate.  It is often sufficient to write characterization tests that only cover the specific inputs and outputs that are known to occur, paying special attention to edge cases.
+ Unlike regression tests, to which they are very similar, characterization tests do not verify the  correct  behavior of the code, which can be impossible to determine. Instead they verify the behavior that was observed when they were written.  Often no specification or test suite is available, leaving only characterization tests as an option, since the conservative path is to assume that the old behavior is the required behavior. Characterization tests are, essentially, change detectors.  It is up to the person analyzing the results to determine if the detected change was expected and/or desirable, or unexpected and/or undesirable.
+ One of the interesting aspects of characterization tests is that, since they are based on existing code, it's possible to generate some characterization tests automatically.  An automated characterization test tool will exercise existing code with a wide range of relevant and/or random input values, record the output values (or state changes) and generate a set of characterization tests.  When the generated tests are executed against a new version of the code, they will produce one or more failures/warnings if that version of the code has been modified in a way that changes a previously established behavior.
+ When testing on the GUI level, characterization testing can be combined with intelligent monkey testing to create complex test cases that capture use cases and special cases thereof.
+ 
+
+ **Advantages**
+
+ Golden Master testing has the following advantages over the traditional assertions-based software testing:
+ 
+ It is relatively easy to implement for complex legacy systems. 
+ As such allows refactoring. 
+ It is generally a sensible approach for complex results such as PDFs, XML, images, etc. where checking all relevant attributes with assertions would be both insensible due to the amount of attributes and result in unreadable/unmaintainable test code. 
+
+ **Disadvantages**
+
+ Golden Master testing has the following disadvantages over traditional assertions-based software testing:
+ 
+ It depends on repeatability. Volatile and non-deterministic values need to be masked / removed, both from the Golden Master as well as from the result of the process. If too many elements need to be removed, or removing them is too complex, it can render Golden Master testing impractical. 
+ It depends not only on the software to be repeatable, but also on the stability of the environment and input values. 
+ Golden Master testing does not infer correctness of the results. It merely helps detecting unwanted side effects of software changes. 
+
+ 

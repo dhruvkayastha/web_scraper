@@ -1,0 +1,49 @@
+***Load testing***
+
+ Load testing  is the process of putting demand on a system and measuring its response.
+ 
+
+ **Software load testing**
+
+ The term  load testing  is used in different ways in the professional software testing community.  Load testing  generally refers to the practice of modeling the expected usage of a software program by simulating multiple users accessing the program concurrently. As such, this testing is most relevant for multi-user systems; often one built using a client/server model, such as web servers. However, other types of software systems can also be load tested. For example, a word processor or graphics editor can be forced to read an extremely large document; or a financial package can be forced to generate a report based on several years' worth of data. The most accurate load testing simulates actual use, as opposed to testing using theoretical or analytical modeling.
+ Load testing lets you measure your website's quality of service (QOS) performance based on actual customer behavior. Nearly all the load testing tools and frame-works follow the classical load testing paradigm: when customers visit your web site, a script recorder records the communication and then creates related interaction scripts. A load generator tries to replay the recorded scripts, which could possibly be modified with different test parameters before replay. In the replay procedure, both the hardware and software statistics will be monitored and collected by the conductor, these statistics include the CPU, memory, disk IO of the physical servers and the response time, throughput of the system under test (SUT), etc. And at last, all these statistics will be analyzed and a load testing report will be generated.
+ Load and performance testing analyzes software intended for a multi-user audience by subjecting the software to different numbers of virtual and live users while monitoring performance measurements under these different loads. Load and performance testing is usually conducted in a test environment identical to the production environment before the software system is permitted to go live.
+ As an example, a web site with shopping cart capability is required to support 100 concurrent users broken out into following activities:
+ 
+ 25 virtual users (VUsers) log in, browse through items and then log off 
+ 25 VUsers log in, add items to their shopping cart, check out and then log off 
+ 25 VUsers log in, return items previously purchased and then log off 
+ 25 VUsers just log in without any subsequent activity A test analyst can use various load testing tools to create these VUsers and their activities. Once the test has started and reached a steady state, the application is being tested at the 100 VUser load as described above. The application’s performance can then be monitored and captured.
+ The specifics of a load test plan or script will generally vary across organizations. For example, in the bulleted list above, the first item could represent 25 VUsers browsing unique items, random items, or a selected set of items depending upon the test plan or script developed. However, all load test plans attempt to simulate system performance across a range of anticipated peak workflows and volumes. The criteria for passing or failing a load test (pass/fail criteria) are generally different across organizations as well. There are no standards specifying acceptable load testing performance metrics.
+ A common misconception is that load testing software provides record and playback capabilities like regression testing tools. Load testing tools analyze the entire OSI protocol stack whereas most regression testing tools focus on GUI performance. For example, a regression testing tool will record and playback a mouse click on a button on a web browser, but a load testing tool will send out hypertext the web browser sends after the user clicks the button. In a multiple-user environment, load testing tools can send out hypertext for multiple users with each user having a unique login ID, password, etc.
+ The popular load testing tools available also provide insight into the causes for slow performance. There are numerous possible causes for slow system performance, including, but not limited to, the following:
+ 
+ Application server(s) or software 
+ Database server(s) 
+ Network – latency, congestion, etc. 
+ Client-side processing 
+ Load balancing between multiple servers Load testing is especially important if the application, system or service will be subject to a service level agreement or SLA.
+ Load testing is performed to determine a system's behavior under both normal and anticipated peak load conditions. It helps to identify the maximum operating capacity of an application as well as any bottlenecks and determine which element is causing degradation. When the load placed on the system is raised beyond normal usage patterns to test the system's response at unusually high or peak loads, it is known as stress testing. The load is usually so great that error conditions are the expected result, but there is no clear boundary when an activity ceases to be a load test and becomes a stress test.
+ The term "load testing" is often used synonymously with concurrency testing, software performance testing, reliability testing, and volume testing for specific scenarios. All of these are types of non-functional testing that are not part of functionality testing used to validate suitability for use of any given software.
+ 
+
+ **User experience under load test**
+
+ In the example above, while the device under test (DUT) is under production load - 100 VUsers, run the target application.  The performance of the target application here would be the User Experience Under Load. It describes how fast or slow the DUT responds, and how satisfied or how the user actually perceives performance.
+ 
+
+ **Browser-level vs. protocol-level users**
+
+ Historically, all load testing was performed with automated API tests that simulated traffic through concurrent interactions at the protocol layer (often called protocol level users or PLUs). With the advance of containers and cloud infrastructure, the option is now present to test with real browsers (often called browser level users or BLUs). Each approach has its merits for different types of applications, but generally browser-level users will be more akin to the real traffic that a website will experience and provide a more realistic load profile and response time measurement. BLUs are certainly a more expensive way of running tests and cannot work with all types of applications, specifically those that are not accessible through a web browser like a desktop client or API-based application. 
+
+ **Physical load testing**
+
+ Many types of machinery, engines, structures, and motors are load tested. The load may be at a designated safe working load (SWL), full load, or at an aggravated level of load. The governing contract, technical specification or test method contains the details of conducting the test. The purpose of a mechanical load test is to verify that all the component parts of a structure including materials, base-fixings are fit for task and loading it is designed for.
+ Several types of load testing are employed 
+ 
+ Static testing is when a designated constant load is applied for a specified time. 
+ Dynamic testing is when a variable or moving load is applied. 
+ Cyclical testing consists of repeated loading and unloading for specified cycles, durations and conditions. The  Supply of Machinery (Safety) Regulation 1992 UK  state that load testing is undertaken before the equipment is put into service for the first time. Performance testing applies a safe working load (SWL), or other specified load, for a designated time in a governing test method, specification, or contract. Under the  Lifting Operations and Lifting Equipment Regulations 1998 UK  load testing after the initial test is required if a major component is replaced, if the item is moved from one location to another or as dictated by the competent person.
+ 
+
+ 

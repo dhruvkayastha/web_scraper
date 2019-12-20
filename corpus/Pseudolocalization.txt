@@ -1,0 +1,47 @@
+***Pseudolocalization***
+Pseudolocalization  (or  pseudo-localization ) is a software testing method used for testing internationalization aspects of software. Instead of translating the text of the software into a foreign language, as in the process of localization, the textual elements of an application are replaced with an altered version of the original language.
+ Example:
+ 
+ These specific alterations make the original words appear readable, but include the most problematic characteristics of the world's languages: varying length of text or characters, language direction, fit into the interface and so on.
+ 
+
+ **Localization process**
+
+ Traditionally, localization of software is independent of the software development process. In a typical scenario, software would be built and tested in one base language (such as English), with any  localizable  elements being extracted into external resources. Those resources are handed off to a localization team for translation into different target languages. The problem with this approach is that many subtle software bugs may be found during the process of localization, when it is too late (or more likely, too expensive) to fix them. The types of problems that can arise during localization involve differences in how written text appears in different languages. These problems include:
+ 
+ Translated text that is significantly longer than the source language, and does not fit within the UI constraints, or which causes text breaks at awkward positions. 
+ Font glyphs that are significantly larger than, or possess diacritic marks not found in, the source language, and which may be cut off vertically. 
+ Languages for which the reading order is not left-to-right, which is especially problematic for user input. 
+ Application code that assumes all characters fit into a limited character set, such as ASCII or ANSI, which can produce actual logic bugs if left uncaught. In addition, the localization process may uncover places where an element should be localizable, but is hard coded in a source language. Similarly, there may be elements that were designed to be localized, but should not be (e.g. the element names in an XML or HTML document.)  Pseudolocalization is designed to catch these types of bugs during the development cycle, by mechanically replacing  all  localizable elements with a pseudo-language that is readable by speakers of the source language, but which contains most of the troublesome elements of other languages and scripts. This is why pseudolocalisation is to be considered an engineering or internationalization tool more than a localization one.
+ 
+
+ **Pseudolocalization in Microsoft Windows**
+
+ Pseudolocalization was introduced at Microsoft during the Windows Vista development cycle. The type of pseudo-language invented for this purpose is called a  pseudo locale  in Windows parlance. These locales were designed to use character sets and scripts characteristics from one of the three broad classes of foreign languages used by Windows at the time—basic ("Western"), mirrored ("Near-Eastern"), and CJK ("Far-Eastern"). Prior to Vista, each of these three languages had their own separate builds of Windows, with potentially different code bases (and thus, different behaviors and bugs.) The pseudo locales created for each of these language families would produce text that still "reads" as English, but is made up of script from another languages. For example, the text string
+ 
+ Edit program settings
+ 
+ would be rendered in the "basic" pseudo-locale as
+ 
+ [!!! εÐiţ Þr0ģЯãm səTτıИğ§ !!!]
+ 
+ This process produces translated strings that are longer, include non-ASCII characters, and (in the case of the "mirrored" pseudo-locale), are written right-to-left. Note that the brackets on either side of the text in this example help to spot the following issues:
+ 
+ text that is cut off (truncation) 
+ strings that are formed by combining (concatenation) 
+ strings that are not made localizable (hard-coding) 
+
+ **Pseudolocalization process at Microsoft**
+
+ Michael Kaplan (a Microsoft program manager) explains the process of pseudo-localization similar to:
+ 
+ an eager and hardworking yet naive intern localizer, who is eager to prove himself [or herself] and who is going to translate every single string that you don't say shouldn't get translated. 
+ One of the key features of the pseudolocalization process is that it happens automatically, during the development cycle, as part of a routine build. The process is almost identical to the process used to produce true localized builds, but is done  before  a build is tested, much earlier in the development cycle. This leaves time for any bugs that are found to be fixed in the base code, which is much easier than bugs not found until a release date is near. The builds that are produced by the pseudolocalization process are tested using the same QA cycle as a non-localized build. Since the pseudo-locales are mimicking English text, they can be tested by an English speaker. Beta version of Windows (7 and 8) have been released with some pseudo-localized strings intact. For these recent version of Windows, the pseudo-localized build is the primary staging build (the one created routinely for testing), and the final English language build is a "localized" version of that. 
+
+ **Pseudolocalization tools for other platforms**
+
+ Besides the tools used internally by Microsoft, other internationalization tools now include pseudolocalization options. These tools include Alchemy Catalyst from Alchemy Software Development, SDL Passolo from SDL and Globalyst from g11n. Such tools include pseudo-localization capability, including ability to view rendered Pseudo-localized dialogs and automating the testing process itself. While tools like Globalyst complete the whole process of creating pseudolocalised build and automate the testing, it can also be done by running a custom made pseudolocalization script on the extracted text resources and manually testing it.
+ There are a variety of free pseudolocalization resources on the Internet that will create pseudolocalized versions of common localization formats like iOS strings, Android xml, Gettext po, and others. These sites allow developers to upload strings file to a Web site and download the resulting pseudolocalized file.
+ 
+
+ 
