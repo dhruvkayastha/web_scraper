@@ -1,15 +1,43 @@
-history
-education
+publicizing a project
+research tools
+specialized strategies
+commercial tools
 profession
-employment
-certification
-impact of globalization
-controversy
 criticism
+examples
+impact of globalization
+alm software suites
+other information
+employment
+formal definition
+application
+use in other media
+future scope
+load testing tools
+hardware
 see also
-notes
+related software
+multiple condition coverage
+libraries
+superstition
 references
+modern view
+scientific studies
+integration
+certification
+history
+car charging system
+notes
+bibliography
 further reading
+overcoming perceived marketing difficulties
+controversy
+use cases
+geek culture
+education
 external links
-origin of the term
+questions to ask
 example
+fuzzing toolchain
+origin of the term
+usage in industry
