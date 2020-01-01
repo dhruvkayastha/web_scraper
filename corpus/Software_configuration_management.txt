@@ -1,0 +1,19 @@
+***Software configuration management***
+In software engineering,  software configuration management  ( SCM  or  S/W CM ) is the task of tracking and controlling changes in the software, part of the larger cross-disciplinary field of configuration management.  SCM practices include revision control and the establishment of baselines.  If something goes wrong, SCM can determine what was changed and who changed it.  If a configuration is working well, SCM can determine how to replicate it across many hosts.
+ The acronym "SCM" is also expanded as  source configuration management process  and  software change and configuration management .  However, "configuration" is generally understood to cover changes typically made by a system administrator.
+ 
+
+ **Purposes**
+
+ The goals of SCM are generally: 
+ Configuration identification - Identifying configurations, configuration items and baselines. 
+ Configuration control - Implementing a controlled change process. This is usually achieved by setting up a change control board whose primary function is to approve or reject all change requests that are sent against any baseline. 
+ Configuration status accounting - Recording and reporting all the necessary information on the status of the development process. 
+ Configuration auditing - Ensuring that configurations contain all their intended parts and are sound with respect to their specifying documents, including requirements, architectural specifications and user manuals. 
+ Build management - Managing the process and tools used for builds. 
+ Process management - Ensuring adherence to the organization's development process. 
+ Environment management - Managing the software and hardware that host the system. 
+ Teamwork - Facilitate team interactions related to the process. 
+ Defect tracking - Making sure every defect has traceability back to the source. With the introduction of cloud computing the purposes of SCM tools have become merged in some cases.  The SCM tools themselves have become virtual appliances that can be instantiated as virtual machines and saved with state and version.  The tools can model and manage cloud-based virtual resources, including virtual appliances, storage units, and software bundles.  The roles and responsibilities of the actors have become merged as well with developers now being able to dynamically instantiate virtual servers and related resources. 
+
+ 

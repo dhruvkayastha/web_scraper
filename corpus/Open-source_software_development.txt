@@ -1,0 +1,64 @@
+***Open-source software development***
+Open-source software development  is the process by which open-source software, or similar software whose source code is publicly available, is developed by an  open-source software project . These are software products available with its source code under an open-source license to study, change, and improve its design. Examples of some popular open-source software products are Mozilla Firefox, Google Chromium, Android, LibreOffice and the VLC media player. Open-source software development has been a large part of the creation of the World Wide Web as we know it, with Tim Berners-Lee contributing his HTML code development as the original platform upon which the internet is now built. 
+
+ **Model**
+
+ Open-source software development can be divided into several phases. The phases specified here are derived from  Sharma et al . [3]  A diagram displaying the process-data structure of open-source software development is shown on the right. In this picture, the phases of open-source software development are displayed, along with the corresponding data elements. This diagram is made using the meta-modeling and meta-process modeling techniques.
+ 
+
+ **Starting an open-source project**
+
+ There are several ways in which work on an open-source project can start:
+ 
+ An individual who senses the need for a project announces the intent to develop a project in public. 
+ A developer working on a limited but working codebase, releases it to the public as the first version of an open-source program. 
+ The source code of a mature project is released to the public. 
+ A well-established open-source project can be forked by an interested outside party. Eric Raymond observed in his essay  The Cathedral and the Bazaar  that announcing the intent for a project is usually inferior to releasing a working project to the public.
+ It's a common mistake to start a project when contributing to an existing similar project would be more effective (NIH syndrome). To start a successful project it is very important to investigate what's already there. The process starts with a choice between the adopting of an existing project, or the starting of a new project. If a new project is started, the process goes to the Initiation phase. If an existing project is adopted, the process goes directly to the Execution phase. 
+
+ **Types of open-source projects**
+
+ Several types of open-source projects exist. First, there is the garden variety of software programs and libraries, which consist of standalone pieces of code. Some might even be dependent on other open-source projects. These projects serve a specified purpose and fill a definite need. Examples of this type of project include the Linux kernel, the Firefox web browser and the LibreOffice office suite of tools.
+ Distributions are another type of open-source project. Distributions are collections of software that are published from the same source with a common purpose. The most prominent example of a "distribution" is an operating system. There are many Linux distributions (such as Debian, Fedora Core, Mandriva, Slackware, Ubuntu etc.) which ship the Linux kernel along with many user-land components. There are other distributions, like ActivePerl, the Perl programming language for various operating systems, and Cygwin distributions of open-source programs for Microsoft Windows.
+ Other open-source projects, like the BSD derivatives, maintain the source code of an entire operating system, the kernel and all of its core components, in one revision control system; developing the entire system together as a single team. These operating system development projects closely integrate their tools, more so than in the other distribution-based systems.
+ Finally, there is the book or standalone document project. These items usually do not ship as part of an open-source software package. The Linux Documentation Project hosts many such projects that document various aspects of the GNU/Linux operating system. There are many other examples of this type of open-source project.
+ 
+
+ **Methods**
+
+ It is hard to run an open-source project following a more traditional software development method like the waterfall model, because in these traditional methods it is not allowed to go back to a previous phase. In open-source software development, requirements are rarely gathered before the start of the project; instead they are based on early releases of the software product, as Robbins describes. [4]  Besides requirements, often volunteer staff is attracted to help develop the software product based on the early releases of the software. This networking effect is essential according to Abrahamsson et al.: “if the introduced prototype gathers enough attention, it will gradually start to attract more and more developers”. However, Abrahamsson et al. also point out that the community is very harsh, much like the business world of closed-source software: “if you find the customers you survive, but without customers you die”. [5] Fuggetta [6]  argues that “rapid prototyping, incremental and evolutionary development, spiral lifecycle, rapid application development, and, recently, extreme programming and the agile software process can be equally applied to proprietary and open source software”. He also pinpoints Extreme Programming as an extremely useful method for open source software development. More generally, all Agile programming methods are applicable to open-source software development, because of their iterative and incremental character. Other Agile method are equally useful for both open and closed source software development:Internet-Speed Development, for example is suitable for open-source software development because of the distributed development principle it adopts. Internet-Speed Development uses geographically distributed teams to ‘work around the clock’. This method, mostly adopted by large closed-source firms, (because they're the only ones which afford development centers in different time zones), works equally well in open source projects because a software developed by a large group of volunteers shall naturally tend to have developers spread across all time zones.
+ 
+
+ **Tools**
+
+ **Communication channels**
+
+ Developers and users of an open-source project are not all necessarily working on the project in proximity. They require some electronic means of communications. E-mail is one of the most common forms of communication among open-source developers and users. Often, electronic mailing lists are used to make sure e-mail messages are delivered to all interested parties at once. This ensures that at least one of the members can reply to it. In order to communicate in real time, many projects use an instant messaging method such as IRC. Web forums have recently become a common way for users to get help with problems they encounter when using an open-source product. Wikis have become common as a communication medium for developers and users. 
+
+ **Version control systems**
+
+ In OSS development the participants, who are mostly volunteers, are distributed amongst different geographic regions so there is need for tools to aid participants to collaborate in the development of source code.
+ During early 2000s, Concurrent Versions System (CVS) was a prominent example of a source code collaboration tool being used in OSS projects. CVS helps manage the files and codes of a project when several people are working on the project at the same time. CVS allows several people to work on the same file at the same time. This is done by moving the file into the users’ directories and then merging the files when the users are done. CVS also enables one to easily retrieve a previous version of a file. During mid 2000s, The Subversion revision control system (SVN) was created to replace CVS. It is quickly gaining ground as an OSS project version control system. Many open-source projects are now using distributed revision control systems, which scale better than centralized repositories such as SVN and CVS.  Popular examples are git, used by the Linux kernel, and Mercurial, used by the Python programming language. 
+
+ **Bug trackers and task lists**
+
+ Most large-scale projects require a bug tracking system to keep track of the status of various issues in the development of the project. Some bug trackers include:
+ 
+ Bugzilla – a sophisticated web-based bug tracker from Mozilla. 
+ Mantis Bug Tracker – a web-based PHP/MySQL bug tracker. 
+ Trac – integrating a bug tracker with a wiki, and an interface to the Subversion version control system. 
+ Redmine – written in Ruby, integrates issue tracking, wiki, forum, news, roadmap, gantt project planning and interfaces with LDAP user directory. 
+ Request tracker – written in Perl. Given as a default to CPAN modules – see rt.cpan.org. 
+ SourceForge and its forks provide a bug tracker as part of its services. As a result, many projects hosted at SourceForge.net and similar services default to using it. 
+ JIRA – Atlassian's project management and issue tracking tool. 
+
+ **Testing and debugging tools**
+
+ Since OSS projects undergo frequent integration, tools that help automate testing during system integration are used. An example of such tool is Tinderbox. Tinderbox enables participants in an OSS project to detect errors during system integration. Tinderbox runs a continuous build process and informs users about the parts of source code that have issues and on which platform(s) these issues arise. A debugger is a computer program that is used to debug (and sometimes test or optimize) other programs. GNU Debugger (GDB) is an example of a debugger used in open-source software development. This debugger offers remote debugging, what makes it especially applicable to open-source software development. A memory leak tool or memory debugger is a programming tool for finding memory leaks and buffer overflows. A memory leak is a particular kind of unnecessary memory consumption by a computer program, where the program fails to release memory that is no longer needed. Examples of memory leak detection tools used by Mozilla are the XPCOM Memory Leak tools.
+Validation tools are used to check if pieces of code conform to the specified syntax. An example of a validation tool is Splint. 
+
+ **Package management**
+
+ A package management system is a collection of tools to automate the process of installing, upgrading, configuring, and removing software packages from a computer. The Red Hat Package Manager (RPM) for .rpm and Advanced Packaging Tool (APT) for .deb file format, are package management systems used by a number of Linux distributions. 
+
+ 

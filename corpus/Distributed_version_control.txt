@@ -1,0 +1,40 @@
+***Distributed version control***
+In software development,  distributed version control  (also known as  distributed revision control ) is a form of version control in which the complete codebase, including its full history, is mirrored on every developer's computer. This enables automatic management branching and merging, speeds up of most operations (except pushing and pulling), improves the ability to work offline, and does not rely on a single location for backups. In 2010, software development author Joel Spolsky described distributed version control systems as "possibly the biggest advance in software development technology in the [past] ten years". 
+
+ **Distributed vs. centralized**
+
+ Distributed version control systems (DVCS) use a peer-to-peer approach to version control, as opposed to the client–server approach of centralized systems. Distributed revision control synchronizes repositories by transferring patches from peer to peer. There is no single central version of the codebase; instead, each user has a working copy and the full change history.
+ Advantages of DVCS (compared with centralized systems) include:
+ 
+ Allows users to work productively when not connected to a network. 
+ Common operations (such as commits, viewing history, and reverting changes) are faster for DVCS, because there is no need to communicate with a central server. With DVCS, communication is only necessary when sharing changes among other peers. 
+ Allows private work, so users can use their changes even for early drafts they do not want to publish. 
+ Working copies effectively function as remote backups, which avoids relying on one physical machine as a single point of failure. 
+ Allows various development models to be used, such as using development branches or a Commander/Lieutenant model. 
+ Permits centralized control of the "release version" of the project 
+ On FOSS software projects it is much easier to create a project fork from a project that is stalled because of leadership conflicts or design disagreements. Disadvantages of DVCS (compared with centralized systems) include:
+ 
+ Initial checkout of a repository is slower as compared to checkout in a centralized version control system, because all branches and revision history are copied to the local machine by default. 
+ The lack of locking mechanisms that is part of most centralized VCS and still plays an important role when it comes to non-mergeable binary files such as graphic assets or too complex single file binary or XML packages (e.g. office documents, PowerBI files, SQL Server Data Tools BI packages, etc.). 
+ Additional storage required for every user to have a complete copy of the complete codebase history. 
+ Increased exposure of the code base since every participant has a locally vulnerable copy. Some originally centralized systems now offer some distributed features. For example, Subversion is able to do many operations with no network. Team Foundation Server and Visual Studio Team Services now host centralized and distributed version control repositories via hosting Git.
+ Similarly, some distributed systems now offer features that mitigate the issues of checkout times and storage costs, such as the Virtual File System for Git developed by Microsoft to work with very large codebases, which exposes a virtual file system that only downloads files to local storage as they are needed.
+ 
+
+ **Work model**
+
+ The distributed model is generally better suited for large projects with partly independent developers, such as the Linux kernel project, because developers can work independently and submit their changes for merge (or rejection). The distributed model flexibly allows adopting custom source code contribution workflows. The integrator workflow is the most widely used. In the centralized model, developers must serialize their work, to avoid problems with different versions.
+ 
+
+ **Central and branch repositories**
+
+ Every project has a central repository that is considered as the official repository, which is managed by the project maintainers. Developers clone this repository to create identical local copies of the code base. Source code changes in the central repository are periodically synchronized with the local repository.
+ The developer creates a new branch in his local repository and modifies source code on that branch. Once the development is done, the change needs to be integrated into the central repository.
+ 
+
+ **Pull requests**
+
+ Contributions to a source code repository that uses a distributed version control system are commonly made by means of a  pull request , also known as a  merge request . The contributor requests that the project maintainer  pull  the source code change, hence the name "pull request". The maintainer has to  merge  the pull request if the contribution should become part of the source base. The developer creates a pull request to notify maintainers of a new change; a comment thread is associated with each pull request. This allows for focused discussion of code changes. Submitted pull requests are visible to anyone with repository access. A pull request can be accepted or rejected by maintainers. Once the pull request is reviewed and approved, it is merged into the repository. Depending on the established workflow, the code may need to be tested before being included into official release. Therefore, some projects contain a special branch for merging untested pull requests. Other projects run an automated test suite on every pull request, using a continuous integration tool such as Travis CI, and the reviewer checks that any new code has appropriate test coverage.
+ 
+
+ 

@@ -1,0 +1,49 @@
+***Issue log***
+An  issue log  is a documentation element of software project management that contains a list of ongoing and closed issues of the project. While issue logs can be viewed as a way to track errors in the project, the role it plays often extends further. Issue logs can be used to order and organize the current issues by type and severity in order to prioritize issues associated with the current milestone or iteration. Issue logs may also contain customer requests and remarks about the various problems that can be found in current code.
+ CAIR - Constraints, Assumptions/Actions, Issues, Risks - a log for tracking such items and managing them.
+ 
+
+ **Issue management**
+
+ An issue log is usually blank at the beginning of the project, but this is not always true for subsequent releases. In some projects, the issue log is actually used as a guideline for the release schedule; in that case the issue log can be populated with issues that are specifically tagged for completion in the upcoming release. As a result, issue log-guided projects may be easier to manage in terms of completion time and progress estimation.  
+In large projects, issues are usually managed by issue tracking software that can provide different ways and tools to help the project manager and the development team handle thousands of issues for one or several of their projects. Some issue tracking systems also provide a way for the community to contribute new ideas and/or code to the project; this type of collaboration is widely used in open source programming.
+ 
+
+ **Release issues / known issues**
+
+ In a case when the project issues can not be fully resolved (such as in pre-release development stages), a  known issues  document is supplied with the software. That document contains a list of issues that are known to exist and, in some cases, instructions on how to overcome the problems caused by these issues.
+ 
+
+ **Template**
+
+ In a typical issue log, the document must be a table containing multiple rows in which each row describes a separate issue. The various attributes of the issue are listed in different columns. An example of a typical issue log is shown below.
+ 
+
+ **Basic issue information**
+
+ Issue reference number (ID) : Typical number to identify different issues. 
+ Issue name : Issue’s name. 
+ Description : Briefly describe what the issue concerns. 
+ Issue author : The person who raise this issue. 
+ Parties : all the people involved in solving the issue. 
+
+ **Issue categories**
+
+ Issue type : what knowledge domain the issue belongs to. (E.g. IT infrastructure, IT application, etc.) 
+ Issue priority : it determines which issue is the most urgent and should be solved first. (E.g. the priorities may encompass Immediate, Soon, Later, etc.) 
+ Issue severity : how bad the consequence would be if the issue is left unsolved. (E.g. the severity may encompass Vital, Major, Medium, Minor, etc.) 
+
+ **Issue date information**
+
+ Date raised : when the issue is raised. 
+ Date assigned : when the issue is assigned. 
+ Deadline : when is the final date to get the issue settled. 
+ Date resolved : when the issue is actually solved. 
+
+ **Issue status**
+
+ Current status : the current status the issue is within. (e.g. investigating, escalated, resolved, etc.) 
+ Actions updating : Actions performed before issue is resolved (List all the actions according to dates.) 
+ Resolution : The final resolution to settle the issue. 
+
+ 
